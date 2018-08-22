@@ -1,10 +1,14 @@
-<h1>Add new course form</h1>
+<h1>Edit Student form</h1>
 
 
-<%= form_with model: @post do |form| %>
+<%= form_with model: @student do |form| %>
 <%= form.text_field :firstname, placeholder: "First name"%>
 <%= form.text_field :lastname, placeholder: "Last name"%>
 <%= form.text_field :email, placeholder: "E-mail address"%>
+<%= form.text_field :age, placeholder: "Age"%>
 <%= form.text_field :avatar, placeholder: "Avatar url"%>
 <%= form.submit%>
 <% end%>
+
+
+<%= link_to 'Back', {:action => 'index'} %>

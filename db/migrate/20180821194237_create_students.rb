@@ -6,7 +6,7 @@ class CreateStudents < ActiveRecord::Migration[5.2]
       t.string :email
       t.integer :age
       t.string :avatar
-      t.references :cohort, foreign_key: true
+
 
       t.timestamps
     end

@@ -1,3 +1,10 @@
-def new
-  @instructor = Instructor.new
-end
+<h1>Add new Instructor</h1>
+
+
+<%= form_with model: @post do |form| %>
+<%= form.text_field :firstname, placeholder: "First name"%>
+<%= form.text_field :lastname, placeholder: "Last name"%>
+<%= form.text_field :email, placeholder: "E-mail address"%>
+<%= form.text_field :avatar, placeholder: "Avatar url"%>
+<%= form.submit%>
+<% end%>

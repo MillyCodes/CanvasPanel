@@ -7,18 +7,18 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 # one course subject
-Course.create(name: "Software Engineering", totalhours: Faker::Number.number(2))
+# Course.create(coursename: "Software Engineering", totalhours: Faker::Number.number(2))
 
 # one instructor
-Instructor.create(
-    firstname: Faker::firstName, lastname: Faker::lastName, email: Faker::email, age: 32,salary: Faker::Number.number(5), avatar: Faker::imageUrl($width = 640, $height = 480), education: "Master's Degree" )
+# Instructor.create(
+#     firstname: Faker::Name.first_name, lastname: Faker::Name.last_name, email: Faker::Internet.email, age: 32,salary: Faker::Number.number(5), avatar: Faker::Avatar.image, education: "Master's Degree")
 
 # one cohort
-Course.create(
-    coursename: "Software Engineering Eagles", startdate: Faker::Date.backward(14) , enddate: Faker::Date.forward(23), instructor: 1, course: 1)
+# Cohort.create(
+#     name: "Software Engineering Eagles", startdate: Faker::Date.backward(14) , enddate: Faker::Date.forward(23), instructor_id: 1, course_id: 1)
 
 # 10 students
-10.times do
-    Student.create(
-        firstname: Faker::firstName, lastname: Faker::lastName, email: Faker::email, age: 22, avatar: Faker::imageUrl($width = 640, $height = 480) )
-end
+# 10.times do
+#     Student.create(
+#         firstname: Faker::Name.first_name, lastname: Faker::Name.last_name, email: Faker::Internet.email, age: 22, avatar: Faker::Avatar.image, cohort_id: 1)
+# end
