@@ -1,0 +1,10 @@
+<p>These are the current Administrators in your system</p>
+
+<ul id = "admins">
+   <% @admins.each do |c| %>
+   <li><%= link_to c.firstname c.lastname, {:action => 'show', :id => c.id} -%></li>
+   <% end %>
+</ul>
+
+<% end %>
+<p><%= link_to "Add new Administrator", {:action => 'new' }%></p>
