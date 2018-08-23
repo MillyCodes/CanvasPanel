@@ -1,0 +1,22 @@
+<% if @courses.blank? %>
+      <p>There are not any cohorts currently in the system.</p>
+<% else %>
+      <h2>Master Class List</h2>
+
+      <ul id = "courses">
+      <% @courses.each do |c| %>
+            <br>
+            <li>Course Code: <%= c.id%></li>
+            <li>Course Name: </strong> <%= link_to c.coursename, {:action => 'show', :id => c.id} -%> <br /></li>
+            <li>Total Hours: <%= c.totalhours%></li>
+
+            <b> <%= link_to 'Edit', {:action => 'edit', :id => c.id} %> </b> | 
+            <b> <%= link_to 'Delete', {:action => 'edit', :id => c.id} %></b>
+   
+</li>
+<% end %>
+</ul>
+
+<% end %>
+
+<p><%= link_to "Add new Course", {:action => 'new' }%></p>

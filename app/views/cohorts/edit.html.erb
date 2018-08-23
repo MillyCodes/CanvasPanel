@@ -2,12 +2,10 @@
 
 
 <%= form_with model: @cohort do |form| %>
-<%= form.text_field :course_id, placeholder: "Course type"%>
 <%= form.text_field :name, placeholder: "Cohort name"%>
 <%= form.text_field :startdate, placeholder: "Start date"%>
 <%= form.text_field :enddate, placeholder: "End date"%>
 <%= form.text_field :instructor_id, placeholder: "Instructor ID#"%>
-<%= form.text_field :name, placeholder: "Cohort name"%>
 
 <%= form.submit%>
 <% end%>

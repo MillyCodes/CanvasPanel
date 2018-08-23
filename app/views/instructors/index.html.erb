@@ -1,0 +1,23 @@
+<% if @instructors.blank? %>
+      <p>There are currently no instructors in the system.</p>
+<% else %>
+      <h2>Instructor List</h2>
+
+      <ul id = "instructors">
+      <% @instructors.each do |c| %>
+            <br>
+            <img src="<%= c.avatar%>" alt="">
+            <li>Name: <%= link_to c.firstname, {:action => 'show', :id => c.id} -%> <%= link_to c.lastname, {:action => 'show', :id => c.id} -%></li>
+            <li>Contact: <%= c.email%></li>
+            <li> Age: <%=c.age%> |  Salary: <%= c.salary%></li>
+
+            <b> <%= link_to 'Edit', {:action => 'edit', :id => c.id} %> </b>
+            <b> <%= link_to 'Delete', {:action => 'edit', :id => c.id} %></b>
+   
+</li>
+<% end %>
+</ul>
+
+<% end %>
+
+<p><%= link_to "Add new Instructor", {:action => 'new' }%></p>
