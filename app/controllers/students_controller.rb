@@ -24,9 +24,10 @@ class StudentsController < ApplicationController
     end
     
     def update
+        puts 'hello'
         @student = Student.find(params[:id])
          
-        if @Student.update_attributes(student_params)
+        if @student.update(student_params)
            redirect_to :action => 'show', :id => @student
         else
            render :action => 'edit'
