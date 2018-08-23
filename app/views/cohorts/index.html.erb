@@ -1,0 +1,23 @@
+<% if @cohorts.blank? %>
+      <p>There are not any cohorts currently in the system.</p>
+<% else %>
+      <h2>Master cohort List</h2>
+
+      <ul id = "cohorts">
+      <% @cohorts.each do |c| %>
+            <br>
+            <li>Subject: <%= c.course.coursename%></li>
+            <li>Cohort Name: <%= c.name %></li>
+            <li>Start Date: <%= c.startdate.strftime("%B, %d, %Y")%></li>
+            <li>End Date: <%= c.enddate.strftime("%B, %d, %Y")%></li>
+
+            <b> <%= link_to 'Edit', {:action => 'edit', :id => c.id} %> </b> | 
+            <b> <%= link_to 'Delete', {:action => 'edit', :id => c.id} %></b>
+   
+</li>
+<% end %>
+</ul>
+
+<% end %>
+
+<p><%= link_to "Add new Cohort", {:action => 'new' }%></p>

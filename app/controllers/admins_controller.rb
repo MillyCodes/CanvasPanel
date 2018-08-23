@@ -1,6 +1,6 @@
 class AdminsController < ApplicationController
     # list method
-    def list
+    def index
         @admins = Admin.all
     end
     # show method - specific admin
@@ -13,7 +13,7 @@ class AdminsController < ApplicationController
     end
     
     def create
-        @admin = Admin.create(_params])
+        @admin = Admin.create(admin_params)
         if @admin.save 
             redirect_to :action => 'list'
         end
@@ -26,7 +26,7 @@ class AdminsController < ApplicationController
     def update
         @admin = Admin.find(params[:id])
          
-        if @admin.update_attributes(admin_param)
+        if @admin.update_attributes(admin_params)
            redirect_to :action => 'show', :id => @admin
         else
            render :action => 'edit'
@@ -41,7 +41,7 @@ class AdminsController < ApplicationController
     end
 
     private
-    def admin_param
+    def admin_params
         params.require(:admin).permit(:firstname, :lastname, :email, :avatar)
      end
 end

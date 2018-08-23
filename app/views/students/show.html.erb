@@ -1,0 +1,13 @@
+<h1><%= @student.firstname %></h1>
+
+<p>
+   <strong>Name: </strong> <%= @student.lastname %>, <%= @student.firstname %><br />
+   <strong>Cohort :</strong> <%= @student.cohort.name %><br />
+   <strong>E-mail:</strong> <%= @student.email %><br />
+</p>
+
+<p><img src="<%=@student.avatar%>"></p>
+
+<hr />
+
+<%= link_to 'Back', {:action => 'index'} %>
