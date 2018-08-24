@@ -7,6 +7,9 @@
 <%= form.text_field :email, placeholder: "E-mail address"%>
 <%= form.text_field :age, placeholder: "Age"%>
 <%= form.text_field :avatar, placeholder: "Avatar url"%>
+ <%= form.label :cohort_id %>
+ <%= form.collection_select :cohort_id, Cohort.all, :id, :name %>
+
 <%= form.submit%>
 <% end%>
 

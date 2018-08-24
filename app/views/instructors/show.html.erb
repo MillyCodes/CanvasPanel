@@ -1,0 +1,17 @@
+<h1><%= @instructor.lastname%>, <%= @instructor.firstname %></h1><sub><%= link_to 'Edit', {:action => 'edit', :id => @instructor.id} %></sub>
+
+<p>
+   <strong>Name: </strong> <%= @instructor.lastname%>, <%= @instructor.firstname %><br />
+
+   <strong>E-mail:</strong> <%= @instructor.email %><br />
+    
+    <strong> Age:</strong> <%=@instructor.age%>  ||  Salary: <%= @instructor.salary%><br />
+
+    <strong>Level of Education:</strong> <%= @instructor.education %><br />
+</p>
+
+<p><img src="<%=@instructor.avatar%>"></p>
+
+<hr />
+
+<%= link_to 'Back', {:action => 'index'} %>

@@ -14,8 +14,8 @@ class CoursesController < ApplicationController
     
     def create
         @course = Course.create(course_params)
-        if @Course.save 
-            redirect_to :action => 'list'
+        if @course.save 
+            redirect_to courses_path
         end
      end
     
@@ -26,7 +26,7 @@ class CoursesController < ApplicationController
     def update
         @course = Course.find(params[:id])
          
-        if @Course.update_attributes(course_params)
+        if @course.update_attributes(course_params)
            redirect_to :action => 'show', :id => @course
         else
            render :action => 'edit'
@@ -42,6 +42,6 @@ class CoursesController < ApplicationController
 
     private
     def course_params
-        params.require(:course).permit(:firstname, :lastname, :email, :avatar)
+        params.require(:course).permit(:coursename, :totalhours)
      end
 end

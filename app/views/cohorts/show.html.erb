@@ -1,15 +1,22 @@
 <h1><%= @cohort.name %></h1>
 
 <p>
-   <strong>Name: </strong> <%= @cohort.name %><br />
-   <strong>Start date :</strong> <%= @cohort.startdate %><br />
-   <strong>End Date:</strong> <%= @cohort.enddate %><br />
+   <strong>Subject:</strong> <%= @cohort.course.coursename%><br />
+   <strong>Cohort Name:</strong> <%= @cohort.name%><br />
+   <strong>Start date: </strong> <%= @cohort.startdate.strftime("%B %d, %Y")%><br />
+   <strong>End Date:</strong> <%= @cohort.enddate.strftime("%B %d, %Y")%><br />
+   <strong>Teacher:</strong>  <%= @cohort.instructor.full_name %> <br /><br>
+   <strong>Students:</strong><ul>
+            <% @students.each do |student| %> 
+            <li><%= student.full_name%></li>
+            <%end%>
+            </ul>
+            <br />
 </p>
 
-<p><img src="<%=@cohort.id%>"></p>
 
 <hr />
 
-<%= link_to 'Back', {:action => 'index'} %>
-
-<%= form_with model: @cohort do |form| %>
+<b><%= link_to 'Back', {:action => 'index'} %><b> |
+<b> <%= link_to 'Edit', {:action => 'edit', :id => @cohort.id} %> </b> | 
+<b> <%= link_to 'Delete', {:action => 'edit', :id => @cohort.id} %></b>

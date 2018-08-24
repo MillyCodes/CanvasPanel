@@ -14,9 +14,7 @@ class AdminsController < ApplicationController
     
     def create
         @admin = Admin.create(admin_params)
-        if @admin.save 
-            redirect_to :action => 'list'
-        end
+        redirect_to 'show'
      end
     
     def edit
@@ -30,8 +28,7 @@ class AdminsController < ApplicationController
            redirect_to :action => 'show', :id => @admin
         else
            render :action => 'edit'
-        end
-        
+        end  
      end
      
     

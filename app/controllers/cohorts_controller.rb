@@ -6,7 +6,8 @@ class CohortsController < ApplicationController
     # show method - specific cohort
     def show
         @cohort = Cohort.find(params[:id])
-    end
+        @students = Cohort.find(params[:id]).students
+    end 
     
     def new
         @cohort = Cohort.new
@@ -14,8 +15,8 @@ class CohortsController < ApplicationController
     
     def create
         @cohort = Cohort.create(cohort_params)
-        if @Cohort.save 
-            redirect_to :action => 'list'
+        if @cohort.save 
+            redirect_to cohorts_path
         end
      end
     
@@ -26,7 +27,7 @@ class CohortsController < ApplicationController
     def update
         @cohort = Cohort.find(params[:id])
          
-        if @Cohort.update_attributes(cohort_params)
+        if @cohort.update_attributes(cohort_params)
            redirect_to :action => 'show', :id => @cohort
         else
            render :action => 'edit'
@@ -42,6 +43,6 @@ class CohortsController < ApplicationController
 
     private
     def cohort_params
-        params.require(:cohort).permit(:name, :totalhours)
+        params.require(:cohort).permit(:name, :startdate, :enddate, :instructor_id, :course_id)
      end
 end
