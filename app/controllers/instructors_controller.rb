@@ -14,8 +14,8 @@ end
 
 def create
     @instructor = Instructor.create(instructor_params)
-    if @Instructor.save 
-        redirect_to :action => 'list'
+    if @instructor.save 
+        redirect_to instructors_path
     end
  end
 
@@ -26,7 +26,7 @@ end
 def update
     @instructor = Instructor.find(params[:id])
      
-    if @Instructor.update_attributes(instructor_params)
+    if @instructor.update_attributes(instructor_params)
        redirect_to :action => 'show', :id => @instructor
     else
        render :action => 'edit'
@@ -42,6 +42,6 @@ end
 
 private
 def instructor_params
-    params.require(:instructor).permit(:firstname, :lastname, :email, :avatar)
+    params.require(:instructor).permit(:firstname, :lastname, :email, :age, :salary, :education, :avatar)
  end
 end

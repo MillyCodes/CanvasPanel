@@ -14,8 +14,8 @@ class StudentsController < ApplicationController
     
     def create
         @student = Student.create(student_params)
-        if @Student.save 
-            redirect_to :action => 'list'
+        if @student.save 
+            redirect_to students_path
         end
      end
     
@@ -24,7 +24,6 @@ class StudentsController < ApplicationController
     end
     
     def update
-        puts 'hello'
         @student = Student.find(params[:id])
          
         if @student.update(student_params)

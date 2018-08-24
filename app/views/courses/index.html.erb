@@ -9,11 +9,11 @@
             <li>Course Code: <%= c.id%></li>
             <li>Course Name: </strong> <%= link_to c.coursename, {:action => 'show', :id => c.id} -%> <br /></li>
             <li>Total Hours: <%= c.totalhours%></li>
-
-            <b> <%= link_to 'Edit', {:action => 'edit', :id => c.id} %> </b> | 
+            
+            <li>
+            <b> <%= link_to 'Edit', {:action => 'edit', :id => c.id} %></b> | 
             <b> <%= link_to 'Delete', {:action => 'edit', :id => c.id} %></b>
-   
-</li>
+            </li>
 <% end %>
 </ul>
 
