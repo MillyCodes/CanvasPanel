@@ -2,8 +2,16 @@
 
 <p>
    <strong>Subject:</strong> <%= @cohort.course.coursename%><br />
-   <strong>Start date :</strong> <%= @cohort.startdate.strftime("%B, %d, %Y")%><br />
-   <strong>End Date:</strong> <%= @cohort.enddate.strftime("%B, %d, %Y")%><br />
+   <strong>Cohort Name:</strong> <%= @cohort.name%><br />
+   <strong>Start date: </strong> <%= @cohort.startdate.strftime("%B %d, %Y")%><br />
+   <strong>End Date:</strong> <%= @cohort.enddate.strftime("%B %d, %Y")%><br />
+   <strong>Teacher:</strong>  <%= @cohort.instructor.full_name %> <br /><br>
+   <strong>Students:</strong><ul>
+            <% @students.each do |student| %> 
+            <li><%= student.full_name%></li>
+            <%end%>
+            </ul>
+            <br />
 </p>
 
 

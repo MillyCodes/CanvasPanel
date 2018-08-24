@@ -3,6 +3,10 @@
 <p>
    <strong>Name: </strong> <%= @course.coursename %><br />
    <strong>Total Hours :</strong> <%= @course.totalhours %><br />
+
+    <strong>Open cohorts :</strong> <% @course.each do |c| %><br />
+
+
    <b> <%= link_to 'Edit', {:action => 'edit', :id => @course.id} %> </b> | 
     <b> <%= link_to 'Delete', {:action => 'edit', :id => @course.id} %></b>
 </p>

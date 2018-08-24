@@ -1,6 +1,6 @@
 class Cohort < ApplicationRecord
     # belongs_to :admin
     belongs_to :course
-    has_one :instructor
+    belongs_to :instructor
     has_many :students
 end

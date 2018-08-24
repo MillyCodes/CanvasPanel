@@ -7,7 +7,8 @@
       <% @students.each do |c| %>
             <br>
             <img src="<%= c.avatar%>" alt="">
-            <li>Name: <%= link_to c.firstname, {:action => 'show', :id => c.id} -%> <%= link_to c.lastname, {:action => 'show', :id => c.id} -%></li>
+            <li>Name: <%= link_to c.full_name, {:action => 'show', :id => c.id} -%>
+
             <li>Enrolled In: <%= c.cohort.name%></li>
             <li>Contact: <%= c.email%></li>
 
