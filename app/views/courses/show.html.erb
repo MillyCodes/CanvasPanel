@@ -4,7 +4,13 @@
    <strong>Name: </strong> <%= @course.coursename %><br />
    <strong>Total Hours :</strong> <%= @course.totalhours %><br />
 
-    <strong>Open cohorts :</strong> <% @course.each do |c| %><br />
+    <strong>Open cohorts :</strong> 
+        <% @cohorts.each do |cohort| %>
+            <%= link_to cohort.name, {controller: "cohorts", :action => 'show', :id => cohort.id} -%>, 
+            
+        <%end%>
+        
+        <br />
 
 
    <b> <%= link_to 'Edit', {:action => 'edit', :id => @course.id} %> </b> | 
