@@ -4,7 +4,7 @@
    <strong>Name: </strong> <%= @course.coursename %><br />
    <strong>Total Hours :</strong> <%= @course.totalhours %><br />
 
-    <strong>Open cohorts :</strong> 
+    <strong>Available Cohorts :</strong> 
         <% @cohorts.each do |cohort| %>
             <%= link_to cohort.name, {controller: "cohorts", :action => 'show', :id => cohort.id} -%>, 
             
