@@ -1,96 +1,143 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>Canvaspanel</title>
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
 
+<!doctype html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <!-- <link rel="icon" href="../../../../favicon.ico"> -->
+
+    <title>Milly's Code Academy</title>
+
+    <!-- Bootstrap core CSS -->
+   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+    <!-- Custom styles for this template -->
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-    <!-- Bootstrap CSS CDN -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
-    <!-- Font Awesome JS -->
-    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js" integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ" crossorigin="anonymous"></script>
-    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js" integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY" crossorigin="anonymous"></script>
 
   </head>
 
   <body>
-
-  <div class="wrapper">
-    <!-- Sidebar  -->
-    <nav id="sidebar">
-        <div class="sidebar-header">
-            <h3>Milly's Code Academy</h3>
-            <strong>MCA</strong>
-        </div>
-
-        <ul class="list-unstyled components">
-            <li>
-                <a href="/">
-                    <i class="fas fa-home"></i>
-                    Dashboard
-                </a>
-            </li>
-            <li>
-                <a href="/">
-                    <i class="fas fa-briefcase"></i>
-                    About
-                </a>
-            </li>
-            <li>
-                <a href="/courses">
-                    <i class="fas fa-copy"></i>
-                    Courses
-                </a>
-            </li>
-            <li>
-                <a href="/cohorts">
-                    <i class="fas fa-copy"></i>
-                    Cohorts
-                </a>
-            </li>
-            <li>
-                <a href="/instructors">
-                    <i class="fas fa-copy"></i>
-                    Instructors
-                </a>
-            </li>
-            <li>
-                <a href="/students">
-                    <i class="fas fa-copy"></i>
-                    Students
-                </a>
-                    </li>
-                </ul>
-            </li>
-        </ul>
-
+    <nav class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0">
+      <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="#">Milly's Code Academy</a>
+      
+      <ul class="navbar-nav px-3">
+        <li class="nav-item text-nowrap">
+          <a class="nav-link" href="#">Sign out</a>
+        </li>
+      </ul>
     </nav>
 
-    <!-- Page Content  -->
-    <div id="content" class="bg-light">
+    <div class="container-fluid">
+      <div class="row">
+        <nav class="col-md-2 d-none d-md-block bg-light sidebar">
+          <div class="sidebar-sticky">
+            <ul class="nav flex-column">
+              <li class="nav-item">
+                <a class="nav-link" href="/">
+                  <span data-feather="home"></span>
+                  Dashboard
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/courses">
+                  <span data-feather="folder"></span>
+                  Courses
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/cohorts">
+                  <span data-feather="layers"></span>
+                  Cohorts
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/instructors">
+                  <span data-feather="user"></span>
+                  Instructors
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/students">
+                  <span data-feather="users"></span>
+                  Students
+                </a>
+              </li>
+            </ul>
 
-        <nav class="navbar navbar-expand-lg dpflex rounded navbar-light bg-secondary">
-            <div class="container-fluid">
-
-                <div>
-                    Milly's Code Academy
-                    
-                
-                
-                  </div>
-                
-
-                 
-            </div>
+            <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-dark">
+              <span>Quick Add</span>
+              <a class="d-flex align-items-center text-dark" href="/courses/add">
+                <span data-feather="file-text"></span>
+              </a>
+            </h6>
+            <ul class="nav flex-column mb-2">
+              <li class="nav-item">
+                <a class="nav-link" href="/cohorts/new">
+                  <span data-feather="plus-circle"></span>
+                  Add Cohort
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/instructors/new">
+                  <span data-feather="user-plus"></span>
+                  Add Instructor
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/students/new">
+                  <span data-feather="user-plus"></span>
+                  Add Student
+                </a>
+              </li>
+            </ul>
+          </div>
         </nav>
 
-        <div>
-        <%= yield %>
-        </div>
+        <main role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4">
+          <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-3 border-bottom">
+            <h5>Dashboard</h5>
+            <div class="btn-toolbar mb-2 mb-md-0">
+              <div class="btn-group mr-2">
+                <button class="btn btn-sm btn-outline-secondary">Button</button>
+                <button class="btn btn-sm btn-outline-secondary">Button</button>
+              </div>
+              <button class="btn btn-sm btn-outline-secondary dropdown-toggle">
+                <span data-feather="calendar"></span>
+                This button
+              </button>
+            </div>
+          </div>
+
+          <div class="content p-2 rounded">
+
+
+          <%= yield %>
+
+          </div>
+          
+        </main>
+      </div>
     </div>
-</div>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+  
+
+    <!-- Icons -->
+    <script src="https://unpkg.com/feather-icons/dist/feather.min.js"></script>
+    <script>
+      feather.replace()
+    </script>
+
 
   </body>
 </html>

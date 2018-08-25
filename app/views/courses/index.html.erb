@@ -4,18 +4,21 @@
       <h2>Master Course List</h2>
       <p><%= link_to "Add new Course", {:action => 'new' }%></p>
 
-      <ul id = "courses">
+      <div class="row text-center align justify-content-around">
       <% @courses.each do |c| %>
-            <br>
-            <li>Course Name: </strong> <%= link_to c.coursename, {:action => 'show', :id => c.id} -%> <br /></li>
-            <li>Course Code: <%= c.id%></li>
-            <li>Total Hours: <%= c.totalhours%></li>
-            
-            <li>
-            <b> <%= link_to 'Edit', {:action => 'edit', :id => c.id} %></b> | 
-            <b> <%= link_to 'Delete', {:action => 'edit', :id => c.id} %></b>
-            </li>
-<% end %>
-</ul>
+    <div class="col-lg- col-md-3 mb-4">
+          <div class="card">  
+            <div class="card-body product-card">
+              <h5 class="card-title">Name: <%=c.coursename%></h5>
+              <p class="card-text">Hours: <%=c.totalhours%> ID: <%=c.id%></p>
+              <button type="button" class="btn btn-info btn-small"><%= link_to 'Edit', {:action => 'edit', :id => c.id} %></button>
+              <button type="button" class="btn btn-info btn-small"><%= link_to 'Delete', {:action => 'edit', :id => c.id} %></button>
+            </div>
+          </div>
+      </div>
+  <% end %>
+</div>
 
 <% end %>
+
+
