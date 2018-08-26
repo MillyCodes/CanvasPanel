@@ -1,4 +1,5 @@
 class InstructorsController < ApplicationController
+    before_action :authenticate_admin!
 # list method
 def index
     @instructors = Instructor.all
@@ -28,8 +29,8 @@ end
 def update
     @instructor = Instructor.find(params[:id])
      
-    if @instructor.update_attributes(instructor_params)
-       redirect_to :action => 'show', :id => @instructor
+    if @instructor.update(instructor_params)
+        redirect_to instructors_path
     else
        render :action => 'edit'
     end

@@ -1,4 +1,5 @@
 class CohortsController < ApplicationController
+    before_action :authenticate_admin!
     # list method
     def index
         @cohorts = Cohort.all

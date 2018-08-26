@@ -22,3 +22,5 @@
 #     Student.create(
 #         firstname: Faker::Name.first_name, lastname: Faker::Name.last_name, email: Faker::Internet.email, age: 22, avatar: Faker::Avatar.image, cohort_id: 1)
 # end
+
+# Admin.create!(email: "me@home.com", password: "ilovepizza")

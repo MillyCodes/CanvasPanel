@@ -1,4 +1,5 @@
 class StudentsController < ApplicationController
+    before_action :authenticate_admin!
     # list method
     def index
         @students = Student.all

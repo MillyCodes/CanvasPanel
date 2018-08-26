@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
 
-  root 'welcome#index'
+
+  root 'pages#index'
+  devise_for :admins
   resources :instructors
   resources :students
   resources :courses
