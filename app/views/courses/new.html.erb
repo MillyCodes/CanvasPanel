@@ -2,11 +2,11 @@
 
 
 <%= form_with model: @course do |form| %>
-<%= form.text_field :coursename, placeholder: "Course Name"%>
-<%= form.text_field :totalhours, placeholder: "Total hours"%>
+<div class="field">Course Name: <%= form.text_field :coursename, placeholder: "Course Name"%></div><br>
+<div class="field">Total Hours: <%= form.text_field :totalhours, placeholder: "Total hours"%></div><br>
 
 <%= form.submit%>
 <% end%>
-
+<br>
 
 <%= link_to 'Back', {:action => 'index'} %>

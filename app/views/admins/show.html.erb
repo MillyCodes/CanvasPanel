@@ -1,1 +1,8 @@
-<h1>Show all admins file.. .each loop</h1>
+<h3>Your Admin Profile</h3>
+
+<p>Name: <%= @admin.first_name%> <%@admin.last_name%> </p>
+<p>E-mail: <%= @admin.email%> <%@admin.email%> </p>
+
+<hr />
+
+<%= link_to 'Back', {:action => 'index'} %> | | <%= link_to 'Edit', edit_admin_registration_path %>

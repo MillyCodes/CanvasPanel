@@ -1,19 +1,23 @@
-<h1>New Cohort</h1>
+<h3>New Cohort</h3>
 
 
 <%= form_with model: @cohort do |form| %>
- <%= form.label :course_id %>
- <%= form.collection_select :course_id, Course.all, :id, :coursename %>
 
-<%= form.text_field :name, placeholder: "Cohort name"%>
-<%= form.text_field :startdate, placeholder: "Start date"%>
-<%= form.text_field :enddate, placeholder: "End date"%>
- <%= form.label :instructor_id %>
- <%= form.collection_select :instructor_id, Instructor.all, :id, :full_name %>
+
+ <div class="field"><%= form.label :course_id %>
+ <%= form.collection_select :course_id, Course.all, :id, :coursename %>
+ </div><br>
+
+<div class="field">Cohort Name: <%= form.text_field :name, placeholder: "Cohort name", autocomplete: "firstname" %></div><br>
+<div class="field">Start Date: <%= form.text_field :startdate, placeholder: "Start date"%></div><br>
+<div class="field">End Date: <%= form.text_field :enddate, placeholder: "End date"%></div><br>
+<div class="field"><%= form.label :instructor_id %>
+ <%= form.collection_select :instructor_id, Instructor.all, :id, :full_name %></div><br>
 
 
 <%= form.submit%>
-<% end%>
 
+<% end%><div class="field">
+<br>
 
 <%= link_to 'Back', {:action => 'index'} %>
