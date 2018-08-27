@@ -1,6 +1,6 @@
 class Student < ApplicationRecord
     belongs_to :cohort
-    belongs_to :admin
+    has_many :admins
 
     def full_name 
         "#{lastname}, #{firstname}"

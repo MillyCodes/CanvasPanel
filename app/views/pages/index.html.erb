@@ -5,7 +5,7 @@
       You have signed in! If this were a real app some sweet conent
       would go here.  But it's just a test.  You might want to sign out now.
     </p>
-    <%= link_to "Sign Out", destroy_admin_session_path, :method => :delete, :class => 'btn btn-large btn-danger' %>
+      <%= link_to('Logout', destroy_admin_session_path, method: :delete) %>        
   <% else %>
     <h1>Welcome!</h1>
     <p class="lead">
