@@ -40,9 +40,14 @@ def update
  end
  
 
-def delete
-    Instructor.find(params[:id]).destroy
-    redirect_to root_path
+def destroy
+    @instructor = Instructor.find(params[:id])
+    @instructor.destroy
+
+    respond_to do |format|
+    format.html {redirect_to instructors_path}
+    format.js
+    end
 end
 
 private

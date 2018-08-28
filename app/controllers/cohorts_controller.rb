@@ -34,13 +34,17 @@ class CohortsController < ApplicationController
            render :action => 'edit'
         end
         
-     end
-     
+end   
     
-    def delete
-        Cohort.find(params[:id]).destroy
-        redirect_to root_path
+     def destroy
+        @cohort = Cohort.find(params[:id])
+        @cohort.destroy
+
+        respond_to do |format|
+        format.html {redirect_to cohorts_path}
+        format.js
     end
+end
 
     private
     def cohort_params

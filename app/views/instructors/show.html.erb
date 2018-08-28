@@ -1,4 +1,4 @@
-<h1><%= @instructor.lastname%>, <%= @instructor.firstname %></h1><sub><%= link_to 'Edit', {:action => 'edit', :id => @instructor.id} %></sub>
+<h1><%= @instructor.lastname%>, <%= @instructor.firstname %></h1><sub><%= link_to 'Edit', {:action => 'edit', :id => @instructor.id} %> | <%= link_to 'Destroy', instructors_path(@instructor), method: :delete, data: { confirm: 'Are you sure?' } %></sub>
 
 <p>
    <strong>Name: </strong> <%= @instructor.lastname%>, <%= @instructor.firstname %><br />

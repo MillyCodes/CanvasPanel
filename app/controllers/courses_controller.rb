@@ -35,12 +35,17 @@ class CoursesController < ApplicationController
         end
         
      end
-     
+   
     
-    def delete
-        Course.find(params[:id]).destroy
-        redirect_to root_path
+    def destroy
+        @course = Course.find(params[:id])
+        @course.destroy
+
+        respond_to do |format|
+        format.html {redirect_to courses_path}
+        format.js
     end
+end
 
     private
     def course_params

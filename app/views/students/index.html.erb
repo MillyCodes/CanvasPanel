@@ -2,6 +2,7 @@
       <p>There are not any students currently in the system.</p>
 <% else %>
       <h2>All Students</h2>
+      <%= link_to 'New Student', new_student_path, remote: true, id: "ajaxcall" %>
       <table class="table">
   <thead>
     <tr>
@@ -9,16 +10,19 @@
       <th scope="col">Name</th>
       <th scope="col">Enrollment</th>
       <th scope="col">Email</th>
-      <th scope="col"></th>
+      <th scope="col">Actions</th>
     </tr>
   </thead>
   <tbody>
-      <% @students_desc.each do |c| %>
-      <tr>
-            <th scope="row"><%= c.id%></th>
-            <td><%= link_to c.full_name, {:action => 'show', :id => c.id} -%></td>
-            <td><%= c.cohort.name%></td>
-            <td><%= c.email%></td>
+      <% @students.each do |student| %>
+      <tr id="student-<%=student.id%>">
+            <th scope="row"><%= student.id%></th>
+            <td><%= link_to student.full_name, {:action => 'show', :id => student.id} -%></td>
+            <td><%= student.cohort.name%></td>
+            <td><%= student.email%></td>
+            <td><%= link_to 'Edit', {:action => 'edit', :id => student.id} %> | <%= link_to 'Destroy', student_path(student), method: :delete, remote: true, data: { confirm: 'Are you sure?' } %> </td>
+            
+            
       </tr>
       <% end %>
     </tr>
