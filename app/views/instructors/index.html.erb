@@ -7,7 +7,7 @@
 <div class="card-deck">
       <% @instructors.each do |c| %>
             <div class="card">
-                  <div class="card-body">
+                  <div class="card-body bg-info rounded-top">
                         <h5 class="card-title"><%= link_to c.full_name, {:action => 'show', :id => c.id} -%></h5>
                         <p class="card-text"><%= c.email%> </p>
                   </div>
