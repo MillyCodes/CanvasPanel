@@ -8,6 +8,10 @@
     <strong> Age:</strong> <%=@instructor.age%>  ||  Salary: <%= @instructor.salary%><br />
 
     <strong>Level of Education:</strong> <%= @instructor.education %><br />
+
+    <strong>Courses:</strong><%@showCohort.each do |cohort|%>
+        <%= link_to cohort.name, {controller: "cohorts", :action => 'show', :id => cohort.id} -%>, 
+    <% end %>
 </p>
 
 <p><img src="<%=@instructor.avatar%>"></p>

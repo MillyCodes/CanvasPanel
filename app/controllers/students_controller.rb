@@ -2,6 +2,7 @@ class StudentsController < ApplicationController
     # list method
     def index
         @students = Student.all
+        @students_desc = @students.order("id asc")
     end
     # show method - specific student
     def show

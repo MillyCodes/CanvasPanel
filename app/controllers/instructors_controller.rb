@@ -6,7 +6,9 @@ end
 # show method - specific instructor
 def show
     @instructor = Instructor.find(params[:id])
+    @showCohort = Cohort.where('instructor_id = ?', params[:id]) 
 end
+
 
 def new
     @instructor = Instructor.new

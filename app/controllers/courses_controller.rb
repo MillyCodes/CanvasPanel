@@ -6,6 +6,7 @@ class CoursesController < ApplicationController
     # show method - specific admin
     def show
         @course = Course.find(params[:id])
+        @cohorts = Course.find(params[:id]).cohorts
     end
     
     def new
