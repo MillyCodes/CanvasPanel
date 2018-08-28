@@ -1,5 +1,6 @@
 class CoursesController < ApplicationController
     before_action :authenticate_admin!
+    before_action :set_course, only: [:destroy]
     # list method
     def index
         @courses = Course.all
@@ -51,4 +52,8 @@ end
     def course_params
         params.require(:course).permit(:coursename, :totalhours)
      end
+
+     def set_course
+        @course = Course.find(params[:id])
+    end
 end

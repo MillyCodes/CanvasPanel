@@ -1,5 +1,6 @@
 class InstructorsController < ApplicationController
     before_action :authenticate_admin!
+    before_action :set_instructor, only: [:destroy]
 # list method
 def index
     @instructors = Instructor.all
@@ -51,7 +52,11 @@ def destroy
 end
 
 private
-def instructor_params
-    params.require(:instructor).permit(:firstname, :lastname, :email, :age, :salary, :education, :avatar)
- end
+    def instructor_params
+        params.require(:instructor).permit(:firstname, :lastname, :email, :age, :salary, :education, :avatar)
+    end
+
+    def set_instructor
+        @instructor = Instructor.find(params[:id])
+    end
 end
