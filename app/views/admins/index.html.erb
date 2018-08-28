@@ -1,0 +1,24 @@
+<h3>Administrator List.</h3>
+
+<% if @admins.blank? %>
+      <p>Currently no administrators in the system.</p>
+<% else %>
+      <p><%= link_to "Add New", {:action => 'new' }%></p>
+
+      <ul id = "admins">
+      <% @admins.each do |a| %>
+            <br>
+            <li><b>ID: <%= a.id%></b></li>
+            <li><b>Full Name:</b> <%= a.full_name%></li>
+            <li><b>E-mail:</b> <%= a.email%></li>
+
+             <sub><%= link_to 'Edit', {:action => 'edit', :id => a.id} %>  | 
+             <%= link_to 'Delete', {:action => 'edit', :id => a.id} %></sub>
+   
+</li>
+<br>
+
+<% end %>
+</ul> 
+
+<% end %>

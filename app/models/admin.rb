@@ -7,4 +7,8 @@ class Admin < ApplicationRecord
     has_many :instructors
     has_many :courses
     has_many :cohorts
+
+    def full_name 
+      "#{last_name}, #{first_name}"
+  end
 end

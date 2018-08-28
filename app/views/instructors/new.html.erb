@@ -2,15 +2,15 @@
 
 
 <%= form_with model: @instructor do |form| %>
-<%= form.text_field :firstname, placeholder: "First name"%>
-<%= form.text_field :lastname, placeholder: "Last name"%>
-<%= form.text_field :email, placeholder: "E-mail address"%>
-<%= form.text_field :age, placeholder: "Age"%>
-<%= form.text_field :salary, placeholder: "Salary"%>
-<%= form.text_field :avatar, placeholder: "Avatar url"%>
-<%= form.select :education, ['Masters Degree', 'Bachelors Degree', 'Associate Degree', 'Other']%>
+<div class="field">First Name:<%= form.text_field :firstname, placeholder: "First name"%></div><br>
+<div class="field">Last Name: <%= form.text_field :lastname, placeholder: "Last name"%></div><br>
+<div class="field">E-mail: <%= form.text_field :email, placeholder: "E-mail address"%></div><br>
+<div class="field">Age: <%= form.text_field :age, placeholder: "Age"%></div><br>
+<div class="field">Salary: <%= form.text_field :salary, placeholder: "Salary"%></div><br>
+<div class="field">Avatar URL: <%= form.text_field :avatar, placeholder: "Avatar url"%></div><br>
+<div class="field">Education: <%= form.select :education, ['Masters Degree', 'Bachelors Degree', 'Associate Degree', 'Other']%></div><br>
 <%= form.submit%>
 <% end%>
-
+<br>
 
 <%= link_to 'Back', {:action => 'index'} %>

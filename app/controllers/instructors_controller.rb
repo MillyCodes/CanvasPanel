@@ -27,14 +27,16 @@ def edit
 end
 
 def update
+    
     @instructor = Instructor.find(params[:id])
-     
+      puts 'before update'
     if @instructor.update(instructor_params)
         redirect_to instructors_path
+        puts 'updated'
     else
        render :action => 'edit'
+       puts 'not updated'
     end
-    
  end
  
 

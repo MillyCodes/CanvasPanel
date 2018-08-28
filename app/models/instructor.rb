@@ -1,5 +1,5 @@
 class Instructor < ApplicationRecord
-    belongs_to :admin
+    has_many :admins
     has_many :cohorts
 
     def full_name 

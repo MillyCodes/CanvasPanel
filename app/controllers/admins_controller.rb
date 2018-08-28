@@ -6,6 +6,7 @@ class AdminsController < ApplicationController
     # show method - specific admin
     def show
         @admin = Admin.find(params[:id])
+
     end
     
     def new
@@ -39,7 +40,7 @@ class AdminsController < ApplicationController
 
     private
     def admin_params
-        params.require(:admin).permit(:firstname, :lastname, :email, :avatar)
+        params.require(:admin).permit(:first_name, :last_name, :email, :avatar)
      end
 end
          
