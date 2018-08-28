@@ -20,6 +20,7 @@
  @import "https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700";
 
  body {
+   background-color: rgba(186, 186, 186, 0.5);
   font-family: 'Poppins', sans-serif;
   font-size: .875rem;
   color: #222;
@@ -34,7 +35,11 @@ img {
 }
 
 .content {
-  background-color:rgba(180, 195, 242, 0.4);
+  background-color:rgba(180, 195, 242, 0.9);
+}
+
+.jumbotron {
+  background-color:rgba(180, 195, 242, 0.9);
 }
 
 .feather {
