@@ -66,5 +66,5 @@ gem 'pg'
 gem 'bootstrap', '~> 4.1.3'
 gem 'jquery-rails'
 gem 'devise'
-gem 'cancancan'
-gem 'rolify'
+gem 'toastr-rails'
+

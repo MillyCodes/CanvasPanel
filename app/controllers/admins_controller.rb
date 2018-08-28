@@ -33,10 +33,15 @@ class AdminsController < ApplicationController
      end
      
     
-    def delete
-        Admin.find(params[:id]).destroy
-        redirect_to root_path
+     def destroy
+        @admin = Admin.find(params[:id])
+        @admin.destroy
+
+        respond_to do |format|
+        format.html {redirect_to root_path}
+        format.js
     end
+end
 
     private
     def admin_params
