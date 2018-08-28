@@ -1,4 +1,5 @@
 class CoursesController < ApplicationController
+    before_action :authenticate_admin!
     # list method
     def index
         @courses = Course.all

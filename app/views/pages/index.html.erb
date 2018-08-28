@@ -1,0 +1,21 @@
+<div class="jumbotron">
+  <% if admin_signed_in? %>
+    <h1>Welcome back!</h1>
+    <p class="lead">
+      You have signed in! If this were a real app some sweet conent
+      would go here.  But it's just a test.  You might want to sign out now.
+    </p>
+    <%= link_to "Sign Out", destroy_admin_session_path, :method => :delete, :class => 'btn btn-large btn-danger' %>
+  <% else %>
+    <h1>Welcome!</h1>
+    <p class="lead">
+      You must sign in or sign up for access.
+    </p>
+    <div class="row-fluid">
+      <div>
+        <%= link_to "Sign In", new_admin_session_path, :class => "btn btn-info" %>
+        <%= link_to "Sign Up", new_admin_registration_path, :class => "btn btn-info" %>
+      </div>
+    </div>
+  <% end %>
+</div>
