@@ -15,7 +15,7 @@ class AdminsController < ApplicationController
     
     def create
         @admin = Admin.create(admin_params)
-        redirect_to 'show'
+        redirect_to :action => 'show', :id => @admin
      end
     
     def edit

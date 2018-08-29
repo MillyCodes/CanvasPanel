@@ -6,13 +6,13 @@
 
       <div class="row text-center justify-content-around">
       <% @courses.each do |c| %>
-    <div id="course-<%=c.id%>"class="col-lg- col-md-3 mb-4">
+    <div id="course-<%=c.id%>"class="col-lg-6 col-md-4 mb-4">
           <div class="card">  
             <div class="card-body product-card">  
               <h5 class="card-title">Name: <%= link_to c.coursename, {:action => 'show', :id => c.id} -%></h5></a>
               <p class="card-text">Hours: <%=c.totalhours%> ID: <%=c.id%></p>
-              <button type="button" class="btn btn-info btn-small"><%= link_to 'Edit', {:action => 'edit', :id => c.id} %></button>
-              <button type="button" class="btn btn-info btn-small"><%= link_to 'Destroy', course_path(c), method: :delete, remote: true, data: { confirm: 'Are you sure?' } %></button>
+              <button type="button" class="btn btn-info btn-small mb-1"><%= link_to 'Edit', {:action => 'edit', :id => c.id} %></button>
+              <button type="button" class="btn btn-info btn-small mb-1"><%= link_to 'Destroy', course_path(c), method: :delete, remote: true, data: { confirm: 'Are you sure?' } %></button>
             </div>
           </div>
       </div>
