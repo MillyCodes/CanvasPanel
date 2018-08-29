@@ -54,4 +54,6 @@ private
 def instructor_params
     params.require(:instructor).permit(:firstname, :lastname, :email, :age, :salary, :education, :avatar)
  end
+
+ 
 end
