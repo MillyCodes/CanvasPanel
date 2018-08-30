@@ -20,6 +20,7 @@
 //= require popper
 //= require bootstrap-sprockets
 
+
 $(document).ready(function() {
 
             //weather widget
@@ -31,10 +32,12 @@ $(document).ready(function() {
                 format: 'json'
             },
             success: function(response) {
-                var iconSrc = "http://openweathermap.org/img/w/" +response.weather[0].icon +".png";
+                let weather = response.weather[0];
+                let iconSrc = "http://openweathermap.org/img/w/" +response.weather[0].icon +".png";
+                let temp = Math.round(response.main.temp);
                 $('#icon').attr('src', iconSrc);
-                $('.showDesc').text(response.weather[0].description);
-                $('.showTemp').text( `${response.main.temp}°F`);
+                $('.showDesc').text(weather.description);
+                $('.showTemp').text( `${temp}°F`);
             },
             error: function() {
                 $('#errors').text("There was an error processing your request. Please try again.");
@@ -46,14 +49,12 @@ $(document).ready(function() {
             let momentNow = moment();
             $('#date-part').html(momentNow.format('MMMM DD'));
             $('#time-part').html(momentNow.format('hh:mm:ss'));
-        }, 100);
-        $('#stop-interval').on('click', function() {
-            clearInterval(interval);
-        });
+            }, 100);
 
-        //news widget
+        //education news widget
+
         $.ajax({
-            url: 'http://api.nytimes.com/svc/mostpopular/v2/mostviewed/education/30.json?api-key=a8c31f783a0a4298a84bd892ec859010',
+            url: 'http://api.nytimes.com/svc/mostpopular/v2/mostviewed/education/1.json?api-key=a8c31f783a0a4298a84bd892ec859010',
             type: 'GET',
             data: {
                 format: 'json',

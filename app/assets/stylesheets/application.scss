@@ -15,9 +15,7 @@
 
 
 @import "bootstrap";
-
-
- @import "https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700";
+@import "https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700";
 
  body {
    background-color: rgba(186, 186, 186, 0.5);
@@ -33,7 +31,6 @@ img {
   display: block;
   height: auto;
 }
-
 
 .content {
   background-color:rgba(180, 195, 242, 0.9);
@@ -96,31 +93,7 @@ img {
 .navbar-brand {
   padding-top: .75rem;
   padding-bottom: .75rem;
-  font-size: 1rem;
-}
-
-.navbar .form-control {
-  padding: .75rem 1rem;
-  border-width: 0;
-  border-radius: 0;
-}
-
-.form-control-dark {
-  color: #fff;
-  background-color: rgba(255, 255, 255, 0.1);
-  border-color: rgba(255, 255, 255, 0.1);
-  &:focus {
-    border-color: transparent;
-    box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.25);
-  }
-}
-
-.border-top {
-  border-top: 1px solid #e5e5e5;
-}
-
-.border-bottom {
-  border-bottom: 1px solid #e5e5e5;
+  font-size: 1.2rem;
 }
 
 .showTemp {
