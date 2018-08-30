@@ -13,7 +13,6 @@
 
     <!-- Bootstrap core CSS -->
    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-
     <!-- Custom styles for this template -->
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
@@ -98,22 +97,30 @@
         </nav>
 
         <main role="main" class="col-md-10 ml-sm-auto col-lg-10 pt-3 px-4">
-          <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-3 border-bottom">
-            <h5>Dashboard</h5>
-            <div class="btn-toolbar mb-2 mb-md-0">
+          <%= render "layouts/widgets" %>
+          
+
                 <%= render "layouts/admin_buttons" %>
-            </div>
-          </div>
 
-          <div class="content p-3 rounded">
-        
-
+          <div class="border border-primary content p-3 rounded mb-2">
+          
           <%= yield %>
 
           </div>
-          
         </main>
+
+        
       </div>
+        <!-- Footer -->
+      <footer class="page-footer font-small blue pt-4 col-md-10 ml-sm-auto col-lg-10 pt-0 px-4">
+      <!-- Copyright -->
+        <div class="footer-copyright text-center py-3">© 2018 Copyright:
+          <a href="https://github.com/MillyCodes/" target="_blank"> Milly Codes</a>
+      </div>
+    <!-- Copyright -->
+    </footer>
+  <!-- Footer -->
+      
     </div>
 
     <!-- Bootstrap core JavaScript
@@ -123,6 +130,7 @@
   src="https://code.jquery.com/jquery-3.3.1.min.js"
   integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
   crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.20.1/moment.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
   

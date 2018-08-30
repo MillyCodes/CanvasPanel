@@ -1,18 +1,19 @@
 <% if @courses.blank? %>
-      <p>There are not any cohorts currently in the system.</p>
+      <p>There are not any courses currently in the system.</p>
 <% else %>
       <h2>Master Course List</h2>
       <p><%= link_to "Add new Course", {:action => 'new' }%></p>
 
-      <div class="row text-center align justify-content-around">
-      <% @courses.each do |c| %>
-    <div class="col-lg- col-md-3 mb-4">
+      <div class="row text-center justify-content-around">
+      <% @courses.each do |course| %>
+    <div class="col-lg-6 col-md-4 mb-4" id="course-<%= course.id%>">
           <div class="card">  
             <div class="card-body product-card">
-              <h5 class="card-title">Name: <%=c.coursename%></h5>
-              <p class="card-text">Hours: <%=c.totalhours%> ID: <%=c.id%></p>
-              <button type="button" class="btn btn-info btn-small"><%= link_to 'Edit', {:action => 'edit', :id => c.id} %></button>
-              <button type="button" class="btn btn-info btn-small"><%= link_to 'Delete', {:action => 'edit', :id => c.id} %></button>
+            
+              <h5 class="card-title">Name: <%= link_to course.coursename, {:action => 'show', :id => course.id} -%></h5>
+              <p class="card-text">Hours: <%=course.totalhours%> ID: <%=course.id%></p>
+              <button type="button" class="btn btn-info btn-small m-1"><%= link_to 'Edit', {:action => 'edit', :id => course.id} %></button>
+              <button type="button" class="btn btn-info btn-small"><%= link_to 'Destroy', course_path(course), method: :delete, remote: true, data: { confirm: 'Are you sure?' } %></button>
             </div>
           </div>
       </div>

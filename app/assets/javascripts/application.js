@@ -19,3 +19,55 @@
 //= require jquery3
 //= require popper
 //= require bootstrap-sprockets
+
+
+$(document).ready(function() {
+
+            //weather widget
+        let city = "New York";
+        $.ajax({
+            url: `http://api.openweathermap.org/data/2.5/weather?q=${city}&units=imperial&appid=763fe1f66db2769efdeb8759a269a071`,
+            type: 'GET',
+            data: {
+                format: 'json'
+            },
+            success: function(response) {
+                let weather = response.weather[0];
+                let iconSrc = "http://openweathermap.org/img/w/" +response.weather[0].icon +".png";
+                let temp = Math.round(response.main.temp);
+                $('#icon').attr('src', iconSrc);
+                $('.showDesc').text(weather.description);
+                $('.showTemp').text( `${temp}°F`);
+            },
+            error: function() {
+                $('#errors').text("There was an error processing your request. Please try again.");
+            
+            }
+        });
+
+        let interval = setInterval(function() {
+            let momentNow = moment();
+            $('#date-part').html(momentNow.format('MMMM DD'));
+            $('#time-part').html(momentNow.format('hh:mm:ss'));
+            }, 100);
+
+        //education news widget
+
+        $.ajax({
+            url: 'http://api.nytimes.com/svc/mostpopular/v2/mostviewed/education/1.json?api-key=a8c31f783a0a4298a84bd892ec859010',
+            type: 'GET',
+            data: {
+                format: 'json',
+            },
+            success: function(response){
+                let data = response.results;
+                $.each(data, function () {
+                    console.log("Title: " + this.title);
+                    console.log("URL: " + this.url);
+                    console.log("Blurb: " + this.abstract);
+                    console.log(" ");
+                    $('.newsTitle').append(`<li><a href="${this.url}" target="_blank">${this.title}</a></li>`);
+                });
+            }
+        });
+});

@@ -4,22 +4,22 @@
       <h2>All Cohorts</h2>
       <p><%= link_to "Add New Cohort", {:action => 'new' }%></p>
 
-
-      <ul id = "cohorts">
-      <% @cohorts.each do |c| %>
+      <% @cohorts.each do |cohort| %>
+      <ul id = "cohort-<%= cohort.id%>">
+      
             <br>
-            <li>Course Name: </strong> <%= link_to c.name, {:action => 'show', :id => c.id} -%> <br /></li>
-            <li>Subject: <%= c.course.coursename%></li>
-            <li>Start Date: <%= c.startdate.strftime("%B, %d, %Y")%></li>
-            <li>End Date: <%= c.enddate.strftime("%B, %d, %Y")%></li>
+            <li>Course Name: </strong> <%= link_to cohort.name, {:action => 'show', :id => cohort.id} -%> <br /></li>
+            <li>Subject: <%= cohort.course.coursename%></li>
+            <li>Start Date: <%= cohort.startdate.strftime("%B, %d, %Y")%></li>
+            <li>End Date: <%= cohort.enddate.strftime("%B, %d, %Y")%></li>
 
-            <b> <%= link_to 'Edit', {:action => 'edit', :id => c.id} %> </b> | 
-            <b> <%= link_to 'Delete', {:action => 'edit', :id => c.id} %></b>
+            <b> <%= link_to 'Edit', {:action => 'edit', :id => cohort.id} %> </b> | 
+            <b> <%= link_to 'Destroy', cohort_path(cohort), method: :delete, remote: true, data: { confirm: 'Are you sure?' } %></b>
    
-</li>
+</li></ul>
 <br>
 
 <% end %>
-</ul> 
+ 
 
 <% end %>

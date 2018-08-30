@@ -14,7 +14,7 @@
 
 
    <b> <%= link_to 'Edit', {:action => 'edit', :id => @course.id} %> </b> | 
-    <b> <%= link_to 'Delete', {:action => 'edit', :id => @course.id} %></b>
+    <b> <%= link_to 'Destroy', course_path(@course), method: :delete, data: { confirm: 'Are you sure?' } %></b>
 </p>
 
 <hr />
