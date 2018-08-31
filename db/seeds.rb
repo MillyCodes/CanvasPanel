@@ -17,11 +17,11 @@ end
 2.times do
 Cohort.create(
     name: "Software Engineering Eagles", startdate: Faker::Date.backward(14) , enddate: Faker::Date.forward(23), instructor_id: 1, course_id: 1)
-
+end
 # 30 students
 30.times do
     Student.create(
         firstname: Faker::Name.first_name, lastname: Faker::Name.last_name, email: Faker::Internet.email, age: 22, avatar: Faker::Avatar.image, cohort_id: 1)
 end
 
-Admin.create!(email: "me@home.com", password: "ilovepizza")
+Admin.create!(email: "test@test.com", password: "test123")
