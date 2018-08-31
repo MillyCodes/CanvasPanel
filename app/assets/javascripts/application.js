@@ -30,7 +30,7 @@ $(document).ready(function() {
             //weather widget
         let city = "New York";
         $.ajax({
-            url: `http://api.openweathermap.org/data/2.5/weather?q=${city}&units=imperial&appid=763fe1f66db2769efdeb8759a269a071`,
+            url: `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=imperial&appid=763fe1f66db2769efdeb8759a269a071`,
             type: 'GET',
             data: {
                 format: 'json'
@@ -58,7 +58,7 @@ $(document).ready(function() {
         //education news widget
 
         $.ajax({
-            url: 'http://api.nytimes.com/svc/mostpopular/v2/mostviewed/education/1.json?api-key=a8c31f783a0a4298a84bd892ec859010',
+            url: 'https://api.nytimes.com/svc/mostpopular/v2/mostviewed/education/1.json?api-key=a8c31f783a0a4298a84bd892ec859010',
             type: 'GET',
             data: {
                 format: 'json',

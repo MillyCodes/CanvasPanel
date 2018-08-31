@@ -6,22 +6,24 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-# one course subject
-# Course.create(coursename: "Software Engineering", totalhours: Faker::Number.number(2))
+# two course subject
+2.times do
+    Course.create(coursename: "Software Engineering", totalhours: Faker::Number.number(2))
+end
 
 # one instructor
-5.times do
-    Instructor.create(firstname: Faker::Name.first_name, lastname: Faker::Name.last_name, email: Faker::Internet.email, age: 32,salary: Faker::Number.number(5), avatar: Faker::Avatar.image, education: "Master's Degree")
-end
+# 5.times do
+#     Instructor.create(firstname: Faker::Name.first_name, lastname: Faker::Name.last_name, email: Faker::Internet.email, age: 32,salary: Faker::Number.number(5), avatar: Faker::Avatar.image, education: "Master's Degree")
+# end
 
 2.times do
 Cohort.create(
-    name: "Software Engineering Eagles", startdate: Faker::Date.backward(14) , enddate: Faker::Date.forward(23), instructor_id: 1, course_id: 1)
+    name: "Software Engineering Eagles", startdate: Faker::Date.backward(14) , enddate: Faker::Date.forward(23), instructor_id: 1, course_id: )
 end
 # 30 students
 30.times do
     Student.create(
-        firstname: Faker::Name.first_name, lastname: Faker::Name.last_name, email: Faker::Internet.email, age: 22, avatar: Faker::Avatar.image, cohort_id: 1)
+        firstname: Faker::Name.first_name, lastname: Faker::Name.last_name, email: Faker::Internet.email, age: 22, avatar: Faker::Avatar.image, cohort_id:  )
 end
 
-Admin.create!(email: "test@test.com", password: "test123")
+# Admin.create!(email: "test@test.com", password: "test123")
