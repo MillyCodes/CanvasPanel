@@ -66,10 +66,6 @@ $(document).ready(function() {
             success: function(response){
                 let data = response.results;
                 $.each(data, function () {
-                    console.log("Title: " + this.title);
-                    console.log("URL: " + this.url);
-                    console.log("Blurb: " + this.abstract);
-                    console.log(" ");
                     $('.newsTitle').append(`<li><a href="${this.url}" target="_blank">${this.title}</a></li>`);
                 });
             }
