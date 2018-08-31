@@ -21,7 +21,7 @@
 
   <body>
     <nav class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0">
-      <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="#">Milly's Code Academy</a>
+      <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="/">Milly's Code Academy</a>
       
       <ul class="navbar-nav px-3">
         <li class="nav-item text-nowrap">
@@ -71,7 +71,6 @@
               <span>Quick Add</span>
               
                 <span data-feather="file-text"></span>
-              
             </h6>
             <ul class="nav flex-column mb-2">
               <li class="nav-item">
@@ -97,9 +96,13 @@
         </nav>
 
         <main role="main" class="col-md-10 ml-sm-auto col-lg-10 pt-3 px-4">
-          <%= render "layouts/widgets" %>
           
-
+        <% if current_page?('/') %>
+            <%= render "layouts/widgets" %>
+        <% end %>
+            
+          
+          
                 <%= render "layouts/admin_buttons" %>
 
           <div class="border border-primary content p-3 rounded mb-2">
@@ -112,9 +115,9 @@
         
       </div>
         <!-- Footer -->
-      <footer class="page-footer font-small blue pt-4 col-md-10 ml-sm-auto col-lg-10 pt-0 px-4">
+      <footer class="page-footer font-small col-md-10 ml-sm-auto col-lg-10 mt-5 px-4">
       <!-- Copyright -->
-        <div class="footer-copyright text-center py-3">© 2018 Copyright:
+        <div class="footer-copyright text-center py-3 mt-2">© 2018 Copyright:
           <a href="https://github.com/MillyCodes/" target="_blank"> Milly Codes</a>
       </div>
     <!-- Copyright -->

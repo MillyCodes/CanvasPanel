@@ -21,13 +21,23 @@
 @import "https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700";
 
  body {
-   background-color: rgba(186, 186, 186, 0.5);
+  background: url('./bg.jpg') no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
   font-family: 'Poppins', sans-serif;
   font-size: .875rem;
   color: #222;
   a {
-    color: #333;
+    color: #000;
   }
+}
+h1, h2, h5 {
+  color: #000;
+}
+h3, h4, h6 {
+  color: darkgrey;
 }
 
 img {
@@ -36,11 +46,11 @@ img {
 }
 
 .content {
-  background-color:rgba(180, 195, 242, 0.9);
+  background-color:rgba(180, 195, 242, 0.6);
 }
 
 .jumbotron {
-  background-color:rgba(180, 195, 242, 0.9);
+  background-color:rgba(180, 195, 242, 0.6);
 }
 
 .feather {
@@ -75,10 +85,10 @@ img {
 
 .sidebar .nav-link {
   font-weight: 500;
-  color: #333;
+  color: rgb(24, 24, 24);
   .feather {
     margin-right: 4px;
-    color: #999;
+    color: #333;
   }
   &.active {
     color: #007bff;
@@ -101,4 +111,12 @@ img {
 
 .showTemp {
   font-size: 150%
+}
+
+.footer-copyright {
+  color: aliceblue;
+    a {
+      color: aliceblue;
+    }
+    font-weight: 100;
 }

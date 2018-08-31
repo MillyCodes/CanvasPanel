@@ -1,14 +1,14 @@
 
 <% if admin_signed_in? %>
   <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-3 border-bottom">
-    <h5>Dashboard</h5>
+    <h4>Dashboard</h4>
       <div class="btn-toolbar mb-2 mb-md-0">
         <ul class="nav nav-pills pull-right">
           <div class="btn-group mr-2">
-            <button class="btn btn-sm btn-outline-secondary"><%= link_to "Profile", current_admin, :id => current_admin.id%></button>
-            <button class="btn btn-sm btn-outline-secondary"><%= link_to 'Edit', edit_admin_registration_path %></button>
+            <button class="btn btn-sm btn-info"><%= link_to "Profile", current_admin, :id => current_admin.id%></button>
+            <button class="btn btn-sm btn-info"><%= link_to 'Edit', edit_admin_registration_path %></button>
           </div>
-          <button class="btn btn-sm btn-outline-secondary">
+          <button class="btn btn-sm btn-info">
             <span data-feather="calendar"></span>
             <%= link_to "All Admins", admins_path %>
           </button>
