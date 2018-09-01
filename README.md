@@ -24,6 +24,7 @@ Work in progress: Admin panel for a fictitious coding school whereby the adminis
 - Looking for a different way to layout the students & cohorts pages.
 
 # Credit/Acknowledgments
+- Inspiration: NYCDA Canvas/Instructure school portal
 - Inspiration/theme: [Start Bootstrap](https://github.com/BlackrockDigital/startbootstrap-sb-admin)
 - [New York Times Latest News API](https://developer.nytimes.com/)
 - [Open Weather API](https://openweathermap.org/api)
