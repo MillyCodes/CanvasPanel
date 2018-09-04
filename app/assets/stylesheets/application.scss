@@ -73,7 +73,7 @@ img {
 .sidebar-sticky {
   position: -webkit-sticky;
   position: sticky;
-  background-color:#735cdd;
+  background-image: linear-gradient(to left, #4b2cda, #595ae7, #707fef, #8fa2f2, #b4c3f2);
   top: 48px;
   /* Height of navbar */
   height: calc(100vh - 48px);
