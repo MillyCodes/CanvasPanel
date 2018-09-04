@@ -1,5 +1,10 @@
 <h1><%= @student.full_name%></h1>
-<p><img src="<%=@student.avatar%>"></p>
+    
+    <% if @student.avatar.attached? %>
+    <!--  use attached? to check presence -->
+    <p><img src="<%= url_for(@student.avatar) %>"></p>
+    <% end %>
+
     <%= link_to 'Edit', {:action => 'edit', :id => @student.id} %> | 
    <%= link_to 'Destroy', student_path(@student), method: :delete, data: { confirm: 'Are you sure?' } %>| 
     <%= link_to 'Back', {:action => 'index'} %>
