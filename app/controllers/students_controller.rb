@@ -2,8 +2,8 @@ class StudentsController < ApplicationController
     before_action :authenticate_admin!
     # list method
     def index
-        @students = Student.all
-        @students_desc = @students.order("id asc")
+        @studentsall = Student.all
+        @students = @studentsall.order("id asc")
     end
     # show method - specific student
     def show
