@@ -17,7 +17,7 @@ class StudentsController < ApplicationController
     def create
         @student = Student.create(student_params)
         if @student.save 
-            redirect_to students_path
+            redirect_to :action => 'show', :id => @student
         end
      end
     
