@@ -5,7 +5,7 @@
 <%= form.text_field :firstname, placeholder: "First name"%>
 <%= form.text_field :lastname, placeholder: "Last name"%>
 <%= form.text_field :email, placeholder: "E-mail address"%>
-<%= form.text_field :age, placeholder: "Age"%>
+<%= form.select :age, (18..100) %>
 <%= form.file_field :avatar %>
  <%= form.label :cohort_id %>
  <%= form.collection_select :cohort_id, Cohort.all, :id, :name %>

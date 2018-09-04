@@ -5,7 +5,7 @@
 <%= form.text_field :firstname, placeholder: "First name"%>
 <%= form.text_field :lastname, placeholder: "Last name"%>
 <%= form.text_field :email, placeholder: "E-mail address"%>
-<%= form.number_field :age, placeholder: "Age"%>
+<%= form.select :age, (18..100) %>
 <%= form.number_field :salary, placeholder: "Salary"%>
 <%= form.file_field :avatar %>
 <%= form.select :education, ['Masters Degree', 'Bachelors Degree', 'Associate Degree', 'Other']%>

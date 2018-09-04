@@ -10,8 +10,8 @@ Work in progress: Admin panel for a fictitious coding school whereby the adminis
 - JQuery 
 
 # Demo Login
-- Username: `me@home.com`
-- Password: `ilovepizza`
+- Username: `test@test.com`
+- Password: `test123`
 
 # Functionality
 - Authentication using Devise for Administrators 
