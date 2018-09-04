@@ -14,7 +14,10 @@
     <% end %>
 </p>
 
-<p><img src="<%=@instructor.avatar%>"></p>
+<% if @instructor.avatar.attached? %>
+    <!--  use attached? to check presence -->
+    <p><img src="<%= url_for(@instructor.avatar) %>"></p>
+    <% end %>
 
 <hr />
 

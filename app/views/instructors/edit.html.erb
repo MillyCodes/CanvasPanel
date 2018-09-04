@@ -7,7 +7,7 @@
 <%= form.text_field :email, placeholder: "E-mail address"%>
 <%= form.number_field :age, placeholder: "Age"%>
 <%= form.number_field :salary, placeholder: "Salary"%>
-<%= form.text_field :avatar, placeholder: "Avatar url"%>
+<%= form.file_field :avatar %>
 <%= form.select :education, ['Masters Degree', 'Bachelors Degree', 'Associate Degree', 'Other']%>
 <%= form.submit%>
 <% end%>
