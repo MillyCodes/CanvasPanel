@@ -18,6 +18,9 @@ Work in progress: Admin panel for a fictitious coding school whereby the adminis
 - Admin abilty includes create/edit/update/destroy 
 - AJAx calls for detroy function.
 
+# Initial Concept Entity Relationship Diagram
+
+
 # Beyond MVP - upcoming updates
 - Create AJAX calls for all CRUD functions.
 - Assign roles to users to all for students and instructors to sign up for view only access.
