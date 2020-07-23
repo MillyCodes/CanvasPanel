@@ -19,7 +19,7 @@ Work in progress: Admin panel for a fictitious coding school whereby the adminis
 - AJAx calls for detroy function.
 
 # Initial Concept Entity Relationship Diagram
-
+![Image of ERD](https://github.com/MillyCodes/CanvasPanel/blob/master/app/assets/images/erd.png?raw=true)
 
 # Beyond MVP - upcoming updates
 - Create AJAX calls for all CRUD functions.
